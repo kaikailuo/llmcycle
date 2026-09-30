@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from src.registry import PROVIDERS
 from src.runner import run
 
 
@@ -11,8 +12,8 @@ def main() -> int:
     parser.add_argument(
         "providers",
         nargs="*",
-        default=["openai"],
-        help="provider registry keys (default: openai)",
+        default=list(PROVIDERS),
+        help="provider registry keys (default: all registered providers)",
     )
     args = parser.parse_args()
 
