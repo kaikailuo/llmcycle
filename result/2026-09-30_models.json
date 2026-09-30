@@ -1,0 +1,4075 @@
+{
+  "models": [
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.1
+              }
+            ],
+            "cache_writes": [
+              {
+                "1h_per_million": 2.0,
+                "5m_per_million": 1.25,
+                "context_max": null,
+                "context_min": 0
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.5
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.5
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.1
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 2.0,
+              "5m_per_million": 1.25,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.0
+        }
+      ],
+      "last_updated": 1790653576,
+      "model_api_id": "claude-haiku-4-5",
+      "model_region": "Global",
+      "model_uid": "7755407403ef4db7917296bfb10983c1",
+      "name": "Claude Haiku 4.5",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.0
+        }
+      ],
+      "provider": "Anthropic",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.5
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.5
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.1
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 2.0,
+              "5m_per_million": 1.25,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.0
+        }
+      ],
+      "last_updated": 1785250192,
+      "model_api_id": "global.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "model_region": "Global",
+      "model_uid": "55144b1e10b14adfa97d5e2115d48f7c",
+      "name": "Claude Haiku 4.5",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.0
+        }
+      ],
+      "provider": "AWS Bedrock",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.55
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.75
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.11
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 2.2,
+              "5m_per_million": 1.375,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.1
+        }
+      ],
+      "last_updated": 1785343927,
+      "model_api_id": "jp.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "model_region": "ap-northeast-1",
+      "model_uid": "0907a55f6fbd4aeb83d7cbdace33cc69",
+      "name": "Claude Haiku 4.5",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.5
+        }
+      ],
+      "provider": "AWS Bedrock",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.55
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.75
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.11
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 2.2,
+              "5m_per_million": 1.375,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.1
+        }
+      ],
+      "last_updated": 1785340898,
+      "model_api_id": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "model_region": "us-west-2",
+      "model_uid": "a5acd17df17740748ce98f0bcb3fae3d",
+      "name": "Claude Haiku 4.5",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.5
+        }
+      ],
+      "provider": "AWS Bedrock",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.5
+              }
+            ],
+            "cache_writes": [
+              {
+                "1h_per_million": 10.0,
+                "5m_per_million": 6.25,
+                "context_max": null,
+                "context_min": 0
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.5
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 12.5
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.5
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 10.0,
+              "5m_per_million": 6.25,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.0
+        }
+      ],
+      "last_updated": 1790653560,
+      "model_api_id": "claude-opus-4-6",
+      "model_region": "Global",
+      "model_uid": "28868ed0113344c8a5ea3d24f4615068",
+      "name": "Claude Opus 4.6",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 25.0
+        }
+      ],
+      "provider": "Anthropic",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.5
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 12.5
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.5
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 10.0,
+              "5m_per_million": 6.25,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.0
+        }
+      ],
+      "last_updated": 1785250548,
+      "model_api_id": "global.anthropic.claude-opus-4-6-v1",
+      "model_region": "Global",
+      "model_uid": "a71f29fcf2d243d484f74d7f558ed934",
+      "name": "Claude Opus 4.6",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 25.0
+        }
+      ],
+      "provider": "AWS Bedrock",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.75
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 13.75
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.55
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 11.0,
+              "5m_per_million": 6.875,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.5
+        }
+      ],
+      "last_updated": 1785340418,
+      "model_api_id": "us.anthropic.claude-opus-4-6-v1",
+      "model_region": "us-west-2",
+      "model_uid": "68306eb566384319bcbd62df2b682a97",
+      "name": "Claude Opus 4.6",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 27.5
+        }
+      ],
+      "provider": "AWS Bedrock",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.5
+              }
+            ],
+            "cache_writes": [
+              {
+                "1h_per_million": 10.0,
+                "5m_per_million": 6.25,
+                "context_max": null,
+                "context_min": 0
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.5
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 12.5
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.5
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 10.0,
+              "5m_per_million": 6.25,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.0
+        }
+      ],
+      "last_updated": 1790653535,
+      "model_api_id": "claude-opus-4-7",
+      "model_region": "Global",
+      "model_uid": "88382b4f195c4f6e9b2730037d0489dd",
+      "name": "Claude Opus 4.7",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 25.0
+        }
+      ],
+      "provider": "Anthropic",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.55
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 11.0,
+              "5m_per_million": 6.875,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.5
+        }
+      ],
+      "last_updated": 1785342137,
+      "model_api_id": "jp.anthropic.claude-opus-4-7",
+      "model_region": "ap-northeast-1",
+      "model_uid": "c804f1ba22eb432293851201058e1ef0",
+      "name": "Claude Opus 4.7",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 27.5
+        }
+      ],
+      "provider": "AWS Bedrock",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.55
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 11.0,
+              "5m_per_million": 6.875,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.5
+        }
+      ],
+      "last_updated": 1785341998,
+      "model_api_id": "us.anthropic.claude-opus-4-7",
+      "model_region": "us-west-2",
+      "model_uid": "c72ef72e450645d9982f1bf2b3c70aaf",
+      "name": "Claude Opus 4.7",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 27.5
+        }
+      ],
+      "provider": "AWS Bedrock",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.2
+              }
+            ],
+            "cache_writes": [
+              {
+                "1h_per_million": 4.0,
+                "5m_per_million": 2.5,
+                "context_max": null,
+                "context_min": 0
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 1.0
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 5.0
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.2
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 4.0,
+              "5m_per_million": 2.5,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 2.0
+        }
+      ],
+      "last_updated": 1790653510,
+      "model_api_id": "claude-sonnet-5-5",
+      "model_region": "Global",
+      "model_uid": "b985df614f5145e09464f14ff80e950f",
+      "name": "Claude Sonnet  5.5",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 10.0
+        }
+      ],
+      "provider": "Anthropic",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 1.65
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 8.25
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.33
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 6.6,
+              "5m_per_million": 4.125,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 3.3
+        }
+      ],
+      "last_updated": 1785340248,
+      "model_api_id": "us.anthropic.claude-sonnet-4-6",
+      "model_region": "us-west-2",
+      "model_uid": "2837b908ea614cd484e9fbcbdbc5c0b8",
+      "name": "Claude Sonnet 4.6",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 16.5
+        }
+      ],
+      "provider": "AWS Bedrock",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.2
+              }
+            ],
+            "cache_writes": [
+              {
+                "1h_per_million": 4.0,
+                "5m_per_million": 2.5,
+                "context_max": null,
+                "context_min": 0
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 1.0
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 5.0
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.2
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 4.0,
+              "5m_per_million": 2.5,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 2.0
+        }
+      ],
+      "last_updated": 1790653479,
+      "model_api_id": "claude-sonnet-5",
+      "model_region": "Global",
+      "model_uid": "f5d234c22be94535a4b42959584f00f8",
+      "name": "Claude Sonnet 5",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 10.0
+        }
+      ],
+      "provider": "Anthropic",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.2
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 4.0,
+              "5m_per_million": 2.5,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 2.0
+        }
+      ],
+      "last_updated": 1785250425,
+      "model_api_id": "global.anthropic.claude-sonnet-5",
+      "model_region": "Global",
+      "model_uid": "249661885df44e3ea1ea79700a5e5354",
+      "name": "Claude Sonnet 5",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 10.0
+        }
+      ],
+      "provider": "AWS Bedrock",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.22
+            }
+          ],
+          "cache_writes": [
+            {
+              "1h_per_million": 4.4,
+              "5m_per_million": 2.75,
+              "context_max": null,
+              "context_min": 0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 2.2
+        }
+      ],
+      "last_updated": 1785340726,
+      "model_api_id": "us.anthropic.claude-sonnet-5",
+      "model_region": "us-west-2",
+      "model_uid": "7cfe1b7a8b4f40eb87f428eb3e4c41fb",
+      "name": "Claude Sonnet 5",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 11.0
+        }
+      ],
+      "provider": "AWS Bedrock",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.003625
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.435
+        }
+      ],
+      "last_updated": 1785247553,
+      "model_api_id": "deepseek-v4-pro",
+      "model_region": "Global",
+      "model_uid": "7a748d18a2a7416491a64391e49539a6",
+      "name": "DeepSeek V4 Pro",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.87
+        }
+      ],
+      "provider": "DeepSeek",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.003
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.15
+        }
+      ],
+      "last_updated": 1785735010,
+      "model_api_id": "deepseek-v4-flash",
+      "model_region": "Global",
+      "model_uid": "22d2f8f90d2a47dab234eafcbc6782de",
+      "name": "DeepSeek-V4-Flash",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.3
+        }
+      ],
+      "provider": "DeepSeek",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.015
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.45
+        }
+      ],
+      "last_updated": 1788229266,
+      "model_api_id": "deepseek-v4-flash-vision-exp",
+      "model_region": "Global",
+      "model_uid": "26bf2733d615457c9eb910a35366e224",
+      "name": "DeepSeek-V4-Flash-Vision-Exp",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.34
+        }
+      ],
+      "provider": "DeepSeek",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.024
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.059
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.15
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.024
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.12
+        }
+      ],
+      "last_updated": 1785256317,
+      "model_api_id": "ep-20251029183622-7nd6b",
+      "model_region": "Global",
+      "model_uid": "add36c0134144f6eb9e986d179606d0b",
+      "name": "Doubao-1.5-pro-32k",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.3
+        }
+      ],
+      "provider": "Volcengine",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.089
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.22
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 1.11
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.089
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.44
+        }
+      ],
+      "last_updated": 1787024237,
+      "model_api_id": "doubao-seed-2-1-turbo-260628",
+      "model_region": "Global",
+      "model_uid": "0e66834cbed544ccb961384c07c0ab81",
+      "name": "doubao-seed-2-1-turbo",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 2.22
+        }
+      ],
+      "provider": "Volcengine",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.095
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.47
+        }
+      ],
+      "last_updated": 1787023633,
+      "model_api_id": "doubao-seed-2-0-pro-260215",
+      "model_region": "Global",
+      "model_uid": "5c8ab142c375454ca2c8458fda54d6b2",
+      "name": "Doubao-Seed-2.0-pro",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 2.37
+        }
+      ],
+      "provider": "Volcengine",
+      "type": "chat"
+    },
+    {
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 32000,
+          "context_min": 0,
+          "per_million": 0.59
+        },
+        {
+          "context_max": 128000,
+          "context_min": 32000,
+          "per_million": 0.89
+        }
+      ],
+      "last_updated": 1786966404,
+      "model_api_id": "ernie-5.1",
+      "model_region": "Global",
+      "model_uid": "6dd374b3e04d49cab4d8c9f2aa6c2459",
+      "name": "ERNIE-5.1",
+      "output": [
+        {
+          "context_max": 32000,
+          "context_min": 0,
+          "per_million": 2.67
+        },
+        {
+          "context_max": 128000,
+          "context_min": 32000,
+          "per_million": 3.26
+        }
+      ],
+      "provider": "Baidu ERNIE",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": 200000,
+                "context_min": 0,
+                "per_million": 0.2
+              },
+              {
+                "context_max": null,
+                "context_min": 200000,
+                "per_million": 0.4
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": 200000,
+            "context_min": 0,
+            "per_million": 1.0
+          },
+          {
+            "context_max": null,
+            "context_min": 200000,
+            "per_million": 2.0
+          }
+        ],
+        "output": [
+          {
+            "context_max": 200000,
+            "context_min": 0,
+            "per_million": 6.0
+          },
+          {
+            "context_max": null,
+            "context_min": 200000,
+            "per_million": 9.0
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 200000,
+              "context_min": 0,
+              "per_million": 0.2
+            },
+            {
+              "context_max": null,
+              "context_min": 200000,
+              "per_million": 0.4
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 200000,
+          "context_min": 0,
+          "per_million": 2.0
+        },
+        {
+          "context_max": null,
+          "context_min": 200000,
+          "per_million": 4.0
+        }
+      ],
+      "last_updated": 1785251222,
+      "model_api_id": "gemini-3.1-pro-preview",
+      "model_region": "Global",
+      "model_uid": "35346582b49545dfb3eab2bc31ba0c9a",
+      "name": "Gemini 3.1 Pro Preview",
+      "output": [
+        {
+          "context_max": 200000,
+          "context_min": 0,
+          "per_million": 12.0
+        },
+        {
+          "context_max": null,
+          "context_min": 200000,
+          "per_million": 18.0
+        }
+      ],
+      "provider": "Google",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.075
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.75
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 4.5
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.15
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.5
+        }
+      ],
+      "last_updated": 1785250960,
+      "model_api_id": "gemini-3.5-flash",
+      "model_region": "Global",
+      "model_uid": "7c0def6f79b7426480742c2ca314834e",
+      "name": "Gemini 3.5 Flash",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 9.0
+        }
+      ],
+      "provider": "Google",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 32000,
+              "context_min": 0,
+              "per_million": 0.03
+            },
+            {
+              "context_max": 128000,
+              "context_min": 32000,
+              "per_million": 0.059
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 32000,
+          "context_min": 0,
+          "per_million": 0.15
+        },
+        {
+          "context_max": 128000,
+          "context_min": 32000,
+          "per_million": 0.3
+        }
+      ],
+      "last_updated": 1787022723,
+      "model_api_id": "glm-4.6v",
+      "model_region": "Global",
+      "model_uid": "2ce473c4c1924d81be31c46b02ee0cff",
+      "name": "GLM-4.6V",
+      "output": [
+        {
+          "context_max": 32000,
+          "context_min": 0,
+          "per_million": 0.44
+        },
+        {
+          "context_max": 128000,
+          "context_min": 32000,
+          "per_million": 0.89
+        }
+      ],
+      "provider": "BigModel",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 32000,
+              "context_min": 0,
+              "per_million": 0.19
+            },
+            {
+              "context_max": null,
+              "context_min": 32000,
+              "per_million": 0.3
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 32000,
+          "context_min": 0,
+          "per_million": 0.89
+        },
+        {
+          "context_max": null,
+          "context_min": 32000,
+          "per_million": 1.18
+        }
+      ],
+      "last_updated": 1785248504,
+      "model_api_id": "glm-5.1",
+      "model_region": "Global",
+      "model_uid": "f58f69dc194a4486b7496a5bb7f43ce1",
+      "name": "GLM-5.1",
+      "output": [
+        {
+          "context_max": 32000,
+          "context_min": 0,
+          "per_million": 3.55
+        },
+        {
+          "context_max": null,
+          "context_min": 32000,
+          "per_million": 4.14
+        }
+      ],
+      "provider": "BigModel",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.3
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.18
+        }
+      ],
+      "last_updated": 1785248325,
+      "model_api_id": "glm-5.2",
+      "model_region": "Global",
+      "model_uid": "8d84975fb0844636875e4e8e75e4e727",
+      "name": "GLM-5.2",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 4.14
+        }
+      ],
+      "provider": "BigModel",
+      "type": "chat"
+    },
+    {
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.5
+        }
+      ],
+      "last_updated": 1785246730,
+      "model_api_id": "gpt-3.5-turbo",
+      "model_region": "Global",
+      "model_uid": "6bc540b101c54faa9d738abad4aae983",
+      "name": "GPT 3.5 Turbo",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.5
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.2
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.8
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.1
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.4
+        }
+      ],
+      "last_updated": 1785245578,
+      "model_api_id": "gpt-4.1-mini",
+      "model_region": "Global",
+      "model_uid": "798764e7a8e34db0879f2380b46a5c64",
+      "name": "GPT 4.1 Mini ",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.6
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.2
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.8
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.1
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.4
+        }
+      ],
+      "last_updated": 1785335330,
+      "model_api_id": "gpt-4.1-mini",
+      "model_region": "Global",
+      "model_uid": "4bf3245a7ba847b68579fc160c683e0d",
+      "name": "GPT 4.1 Mini",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.6
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 1.25
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 5.0
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 1.25
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 2.5
+        }
+      ],
+      "last_updated": 1785343527,
+      "model_api_id": "gpt-4o",
+      "model_region": "Global",
+      "model_uid": "80054d9870ca4318abea470bc4858eec",
+      "name": "GPT 4o",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 10.0
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 1.25
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 5.0
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 1.25
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 2.5
+        }
+      ],
+      "last_updated": 1785342902,
+      "model_api_id": "gpt-4o",
+      "model_region": "Global",
+      "model_uid": "761279a812754a0c8f77c10d29b34e6d",
+      "name": "GPT 4o",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 10.0
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.075
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.3
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.075
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.15
+        }
+      ],
+      "last_updated": 1785343441,
+      "model_api_id": "gpt-4o-mini",
+      "model_region": "Global",
+      "model_uid": "b915f53021b64dc58c54c03bd2f0e11d",
+      "name": "GPT 4o Mini",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.6
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.075
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.3
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.075
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.15
+        }
+      ],
+      "last_updated": 1785342655,
+      "model_api_id": "gpt-4o-mini",
+      "model_region": "Global",
+      "model_uid": "fd3ee1a6b2c946ab9c202c661c716060",
+      "name": "GPT 4o Mini",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.6
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.03
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.25
+        }
+      ],
+      "last_updated": 1785217673,
+      "model_api_id": "gpt-5-mini",
+      "model_region": "Global",
+      "model_uid": "0f6201c9dbd34affa38e59c61076ffe3",
+      "name": "GPT 5 Mini",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 2.0
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.0625
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.625
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 5.0
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.125
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.25
+        }
+      ],
+      "last_updated": 1785343291,
+      "model_api_id": "gpt-5.1",
+      "model_region": "Global",
+      "model_uid": "889f1aedbbbc4b51a4654e890dff0d2d",
+      "name": "GPT 5.1",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 10.0
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.13
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.25
+        }
+      ],
+      "last_updated": 1785339663,
+      "model_api_id": "gpt-5.1",
+      "model_region": "Global",
+      "model_uid": "a2988c92f14047f4855e7ddf3fe72079",
+      "name": "GPT 5.1",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 10.0
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.0875
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.875
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 7.0
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.175
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.75
+        }
+      ],
+      "last_updated": 1785237477,
+      "model_api_id": "gpt-5.2",
+      "model_region": "Global",
+      "model_uid": "1cb0f8fe98424106a568eb9cae92039a",
+      "name": "GPT 5.2",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 14.0
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.18
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.75
+        }
+      ],
+      "last_updated": 1785335869,
+      "model_api_id": "gpt-5.2",
+      "model_region": "Global",
+      "model_uid": "cf8c139f6aea4ceb9b9e9c54b9617ec2",
+      "name": "GPT 5.2",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 14.0
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 0.13
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 0.25
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 1.25
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 2.5
+          }
+        ],
+        "output": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 7.5
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 11.25
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.25
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.5
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 2.5
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 5.0
+        }
+      ],
+      "last_updated": 1785237241,
+      "model_api_id": "gpt-5.4",
+      "model_region": "Global",
+      "model_uid": "7880767d878a4d31abd140def1739db6",
+      "name": "GPT 5.4",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 15.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 22.5
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.13
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 1.25
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 7.5
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.25
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.5
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 2.5
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 5.0
+        }
+      ],
+      "last_updated": 1785217488,
+      "model_api_id": "gpt-5.4",
+      "model_region": "Global",
+      "model_uid": "f30625990b614861880878495e3574d6",
+      "name": "GPT 5.4",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 15.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 22.5
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.04
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.38
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.25
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.08
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.75
+        }
+      ],
+      "last_updated": 1785339515,
+      "model_api_id": "gpt-5.4-mini",
+      "model_region": "Global",
+      "model_uid": "63a4ed78fa8947d8a0516301e8a54b6a",
+      "name": "GPT 5.4 Mini ",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 4.5
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 0.25
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 0.5
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 2.5
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 5.0
+          }
+        ],
+        "output": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 15.0
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 22.5
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.5
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 1.0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 5.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 10.0
+        }
+      ],
+      "last_updated": 1785337639,
+      "model_api_id": "gpt-5.5",
+      "model_region": "Global",
+      "model_uid": "4435b3d637634251ba1758a11f1b438f",
+      "name": "GPT 5.5",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 30.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 45.0
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.5
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 1.0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 5.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 10.0
+        }
+      ],
+      "last_updated": 1785208212,
+      "model_api_id": "gpt-5.5",
+      "model_region": "Global",
+      "model_uid": "f9ec474330a0408f917f1450e1e8becb",
+      "name": "GPT 5.5",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 30.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 45.0
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 0.01
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 0.02
+              }
+            ],
+            "cache_writes": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 0.125
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 0.25
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 0.1
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 0.2
+          }
+        ],
+        "output": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 0.6
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 0.9
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.02
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.04
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.25
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.5
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 0.2
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 0.4
+        }
+      ],
+      "last_updated": 1785737165,
+      "model_api_id": "gpt-5.6-luna",
+      "model_region": "Global",
+      "model_uid": "b642601c9fb7419187be9cac160cd002",
+      "name": "GPT 5.6 Luna",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 1.2
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 1.8
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.02
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.04
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.25
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.5
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 0.2
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 0.4
+        }
+      ],
+      "last_updated": 1789372934,
+      "model_api_id": "gpt-5.6-luna",
+      "model_region": "Global",
+      "model_uid": "85cd0effd637401ea91973df53ff8241",
+      "name": "GPT 5.6 Luna",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 1.2
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 1.8
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 0.2
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 0.4
+              }
+            ],
+            "cache_writes": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 2.5
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 5.0
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 2.0
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 4.0
+          }
+        ],
+        "output": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 10.0
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 15.0
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.4
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.8
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 5.0
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 10.0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 4.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 8.0
+        }
+      ],
+      "last_updated": 1789360145,
+      "model_api_id": "gpt-5.6-sol",
+      "model_region": "Global",
+      "model_uid": "924838f290e04a518dc12b7dab8579ec",
+      "name": "GPT-5.6 Sol",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 20.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 30.0
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.5
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 1.0
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 6.25
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 12.5
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 5.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 10.0
+        }
+      ],
+      "last_updated": 1789361359,
+      "model_api_id": "gpt-5.6-sol",
+      "model_region": "Global",
+      "model_uid": "9b906e9e1f3945f6ba80c26775936603",
+      "name": "GPT-5.6 Sol",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 30.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 45.0
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 0.1
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 0.2
+              }
+            ],
+            "cache_writes": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 1.25
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 2.5
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 1.0
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 2.0
+          }
+        ],
+        "output": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 6.0
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 9.0
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.2
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.4
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 2.5
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 5.0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 2.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 4.0
+        }
+      ],
+      "last_updated": 1789359994,
+      "model_api_id": "gpt-5.6-terra",
+      "model_region": "Global",
+      "model_uid": "685ff23050e14b0ab3d517d301af508f",
+      "name": "GPT-5.6 Terra",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 12.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 18.0
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.2
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.4
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 2.5
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 5.0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 2.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 4.0
+        }
+      ],
+      "last_updated": 1789361437,
+      "model_api_id": "gpt-5.6-terra",
+      "model_region": "Global",
+      "model_uid": "e6b0dce1e9c14c37b5ea95b9ec1490ef",
+      "name": "GPT-5.6 Terra",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 12.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 18.0
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 0.005
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 0.01
+              }
+            ],
+            "cache_writes": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 0.0625
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 0.125
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 0.05
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 0.1
+          }
+        ],
+        "output": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 0.25
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 0.375
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.01
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.02
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.125
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.25
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 0.1
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 0.2
+        }
+      ],
+      "last_updated": 1790651094,
+      "model_api_id": "gpt-6-luna",
+      "model_region": "Global",
+      "model_uid": "dc0083ca3a124e44a4a2e028af29de66",
+      "name": "GPT-6 Luna",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 0.5
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 0.75
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.01
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.02
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.125
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.25
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 0.1
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 0.2
+        }
+      ],
+      "last_updated": 1790660076,
+      "model_api_id": "gpt-6-luna",
+      "model_region": "Global",
+      "model_uid": "30c6b357ea40429b95ab458dc248e84f",
+      "name": "GPT-6 Luna",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 0.5
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 0.75
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 0.1
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 0.2
+              }
+            ],
+            "cache_writes": [
+              {
+                "context_max": 272000,
+                "context_min": 0,
+                "per_million": 1.25
+              },
+              {
+                "context_max": null,
+                "context_min": 272000,
+                "per_million": 2.5
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 1.0
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 2.0
+          }
+        ],
+        "output": [
+          {
+            "context_max": 272000,
+            "context_min": 0,
+            "per_million": 5.0
+          },
+          {
+            "context_max": null,
+            "context_min": 272000,
+            "per_million": 7.5
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.2
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.4
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 2.5
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 5.0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 2.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 4.0
+        }
+      ],
+      "last_updated": 1790651635,
+      "model_api_id": "gpt-6-sol",
+      "model_region": "Global",
+      "model_uid": "d8d596d98f004d43895ffe41565d52a5",
+      "name": "GPT-6 Sol",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 10.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 15.0
+        }
+      ],
+      "provider": "OpenAI",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 0.2
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 0.4
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": 272000,
+              "context_min": 0,
+              "per_million": 2.5
+            },
+            {
+              "context_max": null,
+              "context_min": 272000,
+              "per_million": 5.0
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 2.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 4.0
+        }
+      ],
+      "last_updated": 1790659875,
+      "model_api_id": "gpt-6-sol",
+      "model_region": "Global",
+      "model_uid": "01a8deecbd5846adab71f65488e796b8",
+      "name": "GPT-6 Sol",
+      "output": [
+        {
+          "context_max": 272000,
+          "context_min": 0,
+          "per_million": 10.0
+        },
+        {
+          "context_max": null,
+          "context_min": 272000,
+          "per_million": 15.0
+        }
+      ],
+      "provider": "Azure OpenAI",
+      "type": "chat"
+    },
+    {
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.15
+        }
+      ],
+      "last_updated": 1786966707,
+      "model_api_id": "hy3",
+      "model_region": "Global",
+      "model_uid": "652fee7eadde422b9817d1acf3ed7752",
+      "name": "Hy3",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.59
+        }
+      ],
+      "provider": "Tencent Hunyuan",
+      "type": "chat"
+    },
+    {
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.042
+        }
+      ],
+      "last_updated": 1790144822,
+      "model_api_id": "jev-latest",
+      "model_region": "Global",
+      "model_uid": "be771890d6cf42a2b8c8e8a90e582d16",
+      "name": "Jev",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.0
+        }
+      ],
+      "provider": "Typesafe AI",
+      "type": "judgment"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.1
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.57
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.4
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.16
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.95
+        }
+      ],
+      "last_updated": 1785724384,
+      "model_api_id": "kimi-k2.6",
+      "model_region": "Global",
+      "model_uid": "58c101c80c864aab8dd7ead33b9a418d",
+      "name": "Kimi K2.6",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 4.0
+        }
+      ],
+      "provider": "Moonshot AI",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.031
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.39
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.31
+        }
+      ],
+      "last_updated": 1785249735,
+      "model_api_id": "MiniMax-M2.5",
+      "model_region": "Global",
+      "model_uid": "a138d4b1f95e4527abe84dee8e91234f",
+      "name": "MiniMax-M2.5",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.24
+        }
+      ],
+      "provider": "MiniMax",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.062
+            }
+          ],
+          "cache_writes": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.39
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.31
+        }
+      ],
+      "last_updated": 1785336647,
+      "model_api_id": "MiniMax-M2.7",
+      "model_region": "Global",
+      "model_uid": "20a556ee44954abcbd2cbaf3fc38d956",
+      "name": "MiniMax-M2.7",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.24
+        }
+      ],
+      "provider": "MiniMax",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 256000,
+              "context_min": 0,
+              "per_million": 0.59
+            },
+            {
+              "context_max": 1000000,
+              "context_min": 256000,
+              "per_million": 0.24
+            }
+          ],
+          "cache_writes": [
+            {
+              "5m_per_million": 0.37,
+              "context_max": 256000,
+              "context_min": 0,
+              "per_million": 0.3
+            },
+            {
+              "5m_per_million": 1.48,
+              "context_max": 1000000,
+              "context_min": 256000,
+              "per_million": 1.18
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 256000,
+          "context_min": 0,
+          "per_million": 0.3
+        },
+        {
+          "context_max": 1000000,
+          "context_min": 256000,
+          "per_million": 1.18
+        }
+      ],
+      "last_updated": 1785725211,
+      "model_api_id": "qwen3.6-plus",
+      "model_region": "Global",
+      "model_uid": "6d240147422547a192ce17b354fd5462",
+      "name": "Qwen 3.6 Plus",
+      "output": [
+        {
+          "context_max": 256000,
+          "context_min": 0,
+          "per_million": 1.77,
+          "thinking": true
+        },
+        {
+          "context_max": 256000,
+          "context_min": 0,
+          "per_million": 1.77,
+          "thinking": false
+        },
+        {
+          "context_max": 1000000,
+          "context_min": 256000,
+          "per_million": 7.09,
+          "thinking": true
+        },
+        {
+          "context_max": 1000000,
+          "context_min": 256000,
+          "per_million": 7.09,
+          "thinking": false
+        }
+      ],
+      "provider": "Alibaba Bailian",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.18
+              }
+            ],
+            "cache_writes": [
+              {
+                "5m_per_million": 1.11,
+                "context_max": null,
+                "context_min": 0,
+                "per_million": 0.89
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 0.89
+          }
+        ],
+        "output": [
+          {
+            "context_max": null,
+            "context_min": 0,
+            "per_million": 2.66
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.36
+            }
+          ],
+          "cache_writes": [
+            {
+              "5m_per_million": 2.22,
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 1.77
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 1.77
+        }
+      ],
+      "last_updated": 1785725656,
+      "model_api_id": "qwen3.7-max",
+      "model_region": "Global",
+      "model_uid": "e346c156d86d40c4b326435de81d0f0b",
+      "name": "Qwen 3.7 Max",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 5.32
+        }
+      ],
+      "provider": "Alibaba Bailian",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": 256000,
+                "context_min": 0,
+                "per_million": 0.03
+              },
+              {
+                "context_max": 1000000,
+                "context_min": 256000,
+                "per_million": 0.089
+              }
+            ],
+            "cache_writes": [
+              {
+                "5m_per_million": 0.19,
+                "context_max": 256000,
+                "context_min": 0,
+                "per_million": 0.15
+              },
+              {
+                "5m_per_million": 0.56,
+                "context_max": 1000000,
+                "context_min": 256000,
+                "per_million": 0.44
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": 256000,
+            "context_min": 0,
+            "per_million": 0.15
+          },
+          {
+            "context_max": 1000000,
+            "context_min": 256000,
+            "per_million": 0.44
+          }
+        ],
+        "output": [
+          {
+            "context_max": 256000,
+            "context_min": 0,
+            "per_million": 0.59,
+            "thinking": true
+          },
+          {
+            "context_max": 256000,
+            "context_min": 0,
+            "per_million": 0.59,
+            "thinking": false
+          },
+          {
+            "context_max": 1000000,
+            "context_min": 256000,
+            "per_million": 1.77,
+            "thinking": true
+          },
+          {
+            "context_max": 1000000,
+            "context_min": 256000,
+            "per_million": 1.77,
+            "thinking": false
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 256000,
+              "context_min": 0,
+              "per_million": 0.059
+            },
+            {
+              "context_max": 1000000,
+              "context_min": 256000,
+              "per_million": 0.18
+            }
+          ],
+          "cache_writes": [
+            {
+              "5m_per_million": 0.37,
+              "context_max": 256000,
+              "context_min": 0,
+              "per_million": 0.3
+            },
+            {
+              "5m_per_million": 1.11,
+              "context_max": 1000000,
+              "context_min": 256000,
+              "per_million": 0.89
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 256000,
+          "context_min": 0,
+          "per_million": 0.3
+        },
+        {
+          "context_max": 1000000,
+          "context_min": 256000,
+          "per_million": 0.89
+        }
+      ],
+      "last_updated": 1785725893,
+      "model_api_id": "qwen3.7-plus",
+      "model_region": "Global",
+      "model_uid": "e2d8d1f3d2cb4c1395cf7f740ee7630b",
+      "name": "Qwen 3.7 Plus",
+      "output": [
+        {
+          "context_max": 256000,
+          "context_min": 0,
+          "per_million": 1.18,
+          "thinking": true
+        },
+        {
+          "context_max": 256000,
+          "context_min": 0,
+          "per_million": 1.18,
+          "thinking": false
+        },
+        {
+          "context_max": 1000000,
+          "context_min": 256000,
+          "per_million": 3.54,
+          "thinking": true
+        },
+        {
+          "context_max": 1000000,
+          "context_min": 256000,
+          "per_million": 3.54,
+          "thinking": false
+        }
+      ],
+      "provider": "Alibaba Bailian",
+      "type": "chat"
+    },
+    {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              {
+                "context_max": 128000,
+                "context_min": 0,
+                "per_million": 0.012
+              },
+              {
+                "context_max": 256000,
+                "context_min": 128000,
+                "per_million": 0.036
+              },
+              {
+                "context_max": 1000000,
+                "context_min": 256000,
+                "per_million": 0.071
+              }
+            ],
+            "cache_writes": [
+              {
+                "5m_per_million": 0.074,
+                "context_max": 128000,
+                "context_min": 0,
+                "per_million": 0.06
+              },
+              {
+                "5m_per_million": 0.22,
+                "context_max": 256000,
+                "context_min": 128000,
+                "per_million": 0.18
+              },
+              {
+                "5m_per_million": 1.92,
+                "context_max": 1000000,
+                "context_min": 256000,
+                "per_million": 0.35
+              }
+            ]
+          }
+        ],
+        "input": [
+          {
+            "context_max": 128000,
+            "context_min": 0,
+            "per_million": 0.06
+          },
+          {
+            "context_max": 256000,
+            "context_min": 128000,
+            "per_million": 0.18
+          },
+          {
+            "context_max": 1000000,
+            "context_min": 256000,
+            "per_million": 0.35
+          }
+        ],
+        "output": [
+          {
+            "context_max": 128000,
+            "context_min": 0,
+            "per_million": 0.59,
+            "thinking": true
+          },
+          {
+            "context_max": 128000,
+            "context_min": 0,
+            "per_million": 0.15,
+            "thinking": false
+          },
+          {
+            "context_max": 256000,
+            "context_min": 128000,
+            "per_million": 1.77,
+            "thinking": true
+          },
+          {
+            "context_max": 256000,
+            "context_min": 128000,
+            "per_million": 1.48,
+            "thinking": false
+          },
+          {
+            "context_max": 1000000,
+            "context_min": 256000,
+            "per_million": 4.73,
+            "thinking": true
+          },
+          {
+            "context_max": 1000000,
+            "context_min": 256000,
+            "per_million": 3.54,
+            "thinking": false
+          }
+        ]
+      },
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": 128000,
+              "context_min": 0,
+              "per_million": 0.024
+            },
+            {
+              "context_max": 256000,
+              "context_min": 128000,
+              "per_million": 0.071
+            },
+            {
+              "context_max": 1000000,
+              "context_min": 256000,
+              "per_million": 0.14
+            }
+          ],
+          "cache_writes": [
+            {
+              "5m_per_million": 0.15,
+              "context_max": 128000,
+              "context_min": 0,
+              "per_million": 0.12
+            },
+            {
+              "5m_per_million": 0.44,
+              "context_max": 256000,
+              "context_min": 128000,
+              "per_million": 0.36
+            },
+            {
+              "5m_per_million": 0.89,
+              "context_max": 1000000,
+              "context_min": 256000,
+              "per_million": 0.71
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": 128000,
+          "context_min": 0,
+          "per_million": 0.12
+        },
+        {
+          "context_max": 256000,
+          "context_min": 128000,
+          "per_million": 0.36
+        },
+        {
+          "context_max": 1000000,
+          "context_min": 256000,
+          "per_million": 0.71
+        }
+      ],
+      "last_updated": 1785492450,
+      "model_api_id": "qwen-plus",
+      "model_region": "Global",
+      "model_uid": "d7a90b3faacd4b35a5e5aa6d17a55c09",
+      "name": "Qwen Plus",
+      "output": [
+        {
+          "context_max": 128000,
+          "context_min": 0,
+          "per_million": 1.18,
+          "thinking": true
+        },
+        {
+          "context_max": 128000,
+          "context_min": 0,
+          "per_million": 0.3,
+          "thinking": false
+        },
+        {
+          "context_max": 256000,
+          "context_min": 128000,
+          "per_million": 3.55,
+          "thinking": true
+        },
+        {
+          "context_max": 256000,
+          "context_min": 128000,
+          "per_million": 2.96,
+          "thinking": false
+        },
+        {
+          "context_max": 1000000,
+          "context_min": 256000,
+          "per_million": 9.47,
+          "thinking": true
+        },
+        {
+          "context_max": 1000000,
+          "context_min": 256000,
+          "per_million": 7.11,
+          "thinking": false
+        }
+      ],
+      "provider": "Alibaba Bailian",
+      "type": "chat"
+    },
+    {
+      "cache": [
+        {
+          "cache_read": [
+            {
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.024
+            }
+          ],
+          "cache_writes": [
+            {
+              "5m_per_million": 0.15,
+              "context_max": null,
+              "context_min": 0,
+              "per_million": 0.12
+            }
+          ]
+        }
+      ],
+      "currency": "USD",
+      "input": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.12
+        }
+      ],
+      "last_updated": 1785493234,
+      "model_api_id": "qwen-vl-plus",
+      "model_region": "Global",
+      "model_uid": "9d7357b0958e4609b2b6c3039db4b81e",
+      "name": "Qwen-VL Plus",
+      "output": [
+        {
+          "context_max": null,
+          "context_min": 0,
+          "per_million": 0.3
+        }
+      ],
+      "provider": "Alibaba Bailian",
+      "type": "chat"
+    }
+  ],
+  "models_count": 64
+}
