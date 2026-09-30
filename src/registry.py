@@ -6,6 +6,7 @@ from typing import Type
 from src.base.provider import BaseProvider
 from src.providers.anthropic import AnthropicProvider
 from src.providers.azure_openai import AzureOpenAIProvider
+from src.providers.aws_bedrock import AWSBedrockProvider
 from src.providers.baidu import BaiduProvider
 from src.providers.bigmodel import BigModelProvider
 from src.providers.deepseek import DeepSeekProvider
@@ -80,6 +81,14 @@ PROVIDERS: dict[str, ProviderConfig] = {
         name="Azure OpenAI",
         provider=AzureOpenAIProvider,
         url="https://prices.azure.com/api/retail/prices",
+    ),
+    "aws_bedrock": ProviderConfig(
+        name="AWS Bedrock",
+        provider=AWSBedrockProvider,
+        url=(
+            "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/"
+            "AmazonBedrockFoundationModels/current/index.json"
+        ),
     ),
     "volcengine": ProviderConfig(
         name="Volcengine",

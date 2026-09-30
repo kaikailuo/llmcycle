@@ -3,6 +3,7 @@ from __future__ import annotations
 import unittest
 
 from src.providers.azure_openai import AzureOpenAIProvider
+from src.providers.aws_bedrock import AWSBedrockProvider
 from src.providers.bigmodel import BigModelProvider
 from src.providers.deepseek import DeepSeekProvider
 from src.providers.typesafe import TypesafeProvider
@@ -32,6 +33,12 @@ class RegistryTests(unittest.TestCase):
                 "Azure OpenAI",
                 AzureOpenAIProvider,
                 "https://prices.azure.com/api/retail/prices",
+            ),
+            "aws_bedrock": (
+                "AWS Bedrock",
+                AWSBedrockProvider,
+                "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/"
+                "AmazonBedrockFoundationModels/current/index.json",
             ),
             "volcengine": (
                 "Volcengine",
