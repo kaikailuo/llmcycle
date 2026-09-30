@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import unittest
 
+from src.providers.azure_openai import AzureOpenAIProvider
 from src.providers.bigmodel import BigModelProvider
 from src.providers.deepseek import DeepSeekProvider
 from src.providers.typesafe import TypesafeProvider
+from src.providers.volcengine import VolcengineProvider
 from src.registry import get_provider
 
 
@@ -21,6 +23,16 @@ class RegistryTests(unittest.TestCase):
                 "BigModel",
                 BigModelProvider,
                 "https://docs.bigmodel.cn/cn/guide/start/pricing.md",
+            ),
+            "azure_openai": (
+                "Azure OpenAI",
+                AzureOpenAIProvider,
+                "https://prices.azure.com/api/retail/prices",
+            ),
+            "volcengine": (
+                "Volcengine",
+                VolcengineProvider,
+                "https://ark.cn-beijing.volcengineapi.com/",
             ),
         }
 

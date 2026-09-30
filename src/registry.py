@@ -5,6 +5,7 @@ from typing import Type
 
 from src.base.provider import BaseProvider
 from src.providers.anthropic import AnthropicProvider
+from src.providers.azure_openai import AzureOpenAIProvider
 from src.providers.baidu import BaiduProvider
 from src.providers.bigmodel import BigModelProvider
 from src.providers.deepseek import DeepSeekProvider
@@ -14,6 +15,7 @@ from src.providers.moonshot import MoonshotProvider
 from src.providers.openai import OpenAIProvider
 from src.providers.tencent import TencentProvider
 from src.providers.typesafe import TypesafeProvider
+from src.providers.volcengine import VolcengineProvider
 
 
 @dataclass(frozen=True)
@@ -73,6 +75,16 @@ PROVIDERS: dict[str, ProviderConfig] = {
         name="BigModel",
         provider=BigModelProvider,
         url="https://docs.bigmodel.cn/cn/guide/start/pricing.md",
+    ),
+    "azure_openai": ProviderConfig(
+        name="Azure OpenAI",
+        provider=AzureOpenAIProvider,
+        url="https://prices.azure.com/api/retail/prices",
+    ),
+    "volcengine": ProviderConfig(
+        name="Volcengine",
+        provider=VolcengineProvider,
+        url="https://ark.cn-beijing.volcengineapi.com/",
     ),
 }
 
