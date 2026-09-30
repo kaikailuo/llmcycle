@@ -5,9 +5,12 @@ from typing import Type
 
 from src.base.provider import BaseProvider
 from src.providers.anthropic import AnthropicProvider
+from src.providers.baidu import BaiduProvider
 from src.providers.google import GoogleProvider
+from src.providers.minimax import MiniMaxProvider
 from src.providers.moonshot import MoonshotProvider
 from src.providers.openai import OpenAIProvider
+from src.providers.tencent import TencentProvider
 
 
 @dataclass(frozen=True)
@@ -37,6 +40,21 @@ PROVIDERS: dict[str, ProviderConfig] = {
         name="Google",
         provider=GoogleProvider,
         url="https://ai.google.dev/gemini-api/docs/pricing",
+    ),
+    "baidu": ProviderConfig(
+        name="Baidu ERNIE",
+        provider=BaiduProvider,
+        url="https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya",
+    ),
+    "tencent": ProviderConfig(
+        name="Tencent Hunyuan",
+        provider=TencentProvider,
+        url="https://cloud.tencent.com/document/product/1823/130055",
+    ),
+    "minimax": ProviderConfig(
+        name="MiniMax",
+        provider=MiniMaxProvider,
+        url="https://platform.minimax.io/subscribe/token-plan?tab=api-enterprise",
     ),
 }
 

@@ -1191,7 +1191,7 @@
         {
           "context_max": 128000,
           "context_min": 32000,
-          "per_million": 0.89
+          "per_million": 0.88
         }
       ],
       "last_updated": 1786966404,
@@ -1203,12 +1203,12 @@
         {
           "context_max": 32000,
           "context_min": 0,
-          "per_million": 2.67
+          "per_million": 2.65
         },
         {
           "context_max": 128000,
           "context_min": 32000,
-          "per_million": 3.26
+          "per_million": 3.24
         }
       ],
       "provider": "Baidu ERNIE",
@@ -3442,14 +3442,14 @@
             {
               "context_max": null,
               "context_min": 0,
-              "per_million": 0.031
+              "per_million": 0.03
             }
           ],
           "cache_writes": [
             {
               "context_max": null,
               "context_min": 0,
-              "per_million": 0.39
+              "per_million": 0.375
             }
           ]
         }
@@ -3459,7 +3459,7 @@
         {
           "context_max": null,
           "context_min": 0,
-          "per_million": 0.31
+          "per_million": 0.3
         }
       ],
       "last_updated": 1785249735,
@@ -3471,7 +3471,7 @@
         {
           "context_max": null,
           "context_min": 0,
-          "per_million": 1.24
+          "per_million": 1.2
         }
       ],
       "provider": "MiniMax",
@@ -3484,14 +3484,14 @@
             {
               "context_max": null,
               "context_min": 0,
-              "per_million": 0.062
+              "per_million": 0.06
             }
           ],
           "cache_writes": [
             {
               "context_max": null,
               "context_min": 0,
-              "per_million": 0.39
+              "per_million": 0.375
             }
           ]
         }
@@ -3501,7 +3501,7 @@
         {
           "context_max": null,
           "context_min": 0,
-          "per_million": 0.31
+          "per_million": 0.3
         }
       ],
       "last_updated": 1785336647,
@@ -3513,7 +3513,7 @@
         {
           "context_max": null,
           "context_min": 0,
-          "per_million": 1.24
+          "per_million": 1.2
         }
       ],
       "provider": "MiniMax",
