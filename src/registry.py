@@ -6,11 +6,14 @@ from typing import Type
 from src.base.provider import BaseProvider
 from src.providers.anthropic import AnthropicProvider
 from src.providers.baidu import BaiduProvider
+from src.providers.bigmodel import BigModelProvider
+from src.providers.deepseek import DeepSeekProvider
 from src.providers.google import GoogleProvider
 from src.providers.minimax import MiniMaxProvider
 from src.providers.moonshot import MoonshotProvider
 from src.providers.openai import OpenAIProvider
 from src.providers.tencent import TencentProvider
+from src.providers.typesafe import TypesafeProvider
 
 
 @dataclass(frozen=True)
@@ -55,6 +58,21 @@ PROVIDERS: dict[str, ProviderConfig] = {
         name="MiniMax",
         provider=MiniMaxProvider,
         url="https://platform.minimax.io/subscribe/token-plan?tab=api-enterprise",
+    ),
+    "deepseek": ProviderConfig(
+        name="DeepSeek",
+        provider=DeepSeekProvider,
+        url="https://api-docs.deepseek.com/quick_start/pricing/",
+    ),
+    "typesafe": ProviderConfig(
+        name="Typesafe AI",
+        provider=TypesafeProvider,
+        url="https://typesafe.ai/",
+    ),
+    "bigmodel": ProviderConfig(
+        name="BigModel",
+        provider=BigModelProvider,
+        url="https://docs.bigmodel.cn/cn/guide/start/pricing.md",
     ),
 }
 
