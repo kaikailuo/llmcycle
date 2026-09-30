@@ -18,7 +18,11 @@ class RegistryTests(unittest.TestCase):
                 DeepSeekProvider,
                 "https://api-docs.deepseek.com/quick_start/pricing/",
             ),
-            "typesafe": ("Typesafe AI", TypesafeProvider, "https://typesafe.ai/"),
+            "typesafe": (
+                "Typesafe AI",
+                TypesafeProvider,
+                "https://docs.typesafe.ai/models.md",
+            ),
             "bigmodel": (
                 "BigModel",
                 BigModelProvider,

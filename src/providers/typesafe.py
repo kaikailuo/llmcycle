@@ -6,7 +6,6 @@ from dataclasses import dataclass
 from decimal import Decimal, InvalidOperation
 from html.parser import HTMLParser
 from typing import Any
-from urllib.parse import urljoin, urlsplit
 from urllib.request import Request, urlopen
 
 from src.base.provider import BaseProvider
@@ -49,34 +48,18 @@ class TypesafeProvider(BaseProvider):
     name = "Typesafe AI"
 
     MODEL_ALIASES: dict[str, tuple[str, ...]] = {
-        "jev-latest": ("Jev",),
+        "jev-latest": ("Jev", "Jev 1.13", "jev-1.13.0"),
     }
 
     def fetch(self, source_url: str) -> str:
-        landing_page = self._fetch_text(source_url)
-        if self._parse_output_price(self._plain_text(landing_page)) is not None:
-            return landing_page
-
-        # The homepage publishes the input price directly and links to the
-        # official Jev launch article that states output tokens are free.
-        link_match = re.search(
-            r'href=["\']([^"\']*introducing-system-one-models-and-jev[^"\']*)["\']',
-            landing_page,
-            re.I,
-        )
-        if link_match is None:
-            return landing_page
-        article_url = urljoin(source_url, link_match.group(1))
-        if urlsplit(article_url).netloc != urlsplit(source_url).netloc:
-            return landing_page
-        return f"{landing_page}\n{self._fetch_text(article_url)}"
+        return self._fetch_text(source_url)
 
     @staticmethod
     def _fetch_text(url: str) -> str:
         request = Request(
             url,
             headers={
-                "Accept": "text/html, text/plain;q=0.9",
+                "Accept": "text/markdown, text/plain;q=0.9",
                 "User-Agent": "llmcycle-pricing-maintainer/1.0",
             },
         )
@@ -162,6 +145,19 @@ class TypesafeProvider(BaseProvider):
 
     @staticmethod
     def _parse_input_price(text: str) -> Decimal | None:
+        million_match = re.search(
+            r"Price\s*\(\s*per\s+Btok\s*/\s*per\s+Mtok\s*\)"
+            r"\s*\|?\s*\\?\$\s*[0-9]+(?:\.[0-9]+)?\s*/\s*"
+            r"\\?\$\s*([0-9]+(?:\.[0-9]+)?)",
+            text,
+            re.I,
+        )
+        if million_match is not None:
+            try:
+                return Decimal(million_match.group(1))
+            except InvalidOperation:
+                return None
+
         matches = re.findall(
             r"\$\s*([0-9]+(?:\.[0-9]+)?)\s*(?:per|/)\s*"
             r"(?:one\s+)?billion\s+input\s+tokens?",
@@ -176,7 +172,13 @@ class TypesafeProvider(BaseProvider):
 
     @staticmethod
     def _parse_output_price(text: str) -> Decimal | None:
-        if re.search(r"output\s+tokens?\s*:?\s*free\b", text, re.I):
+        if re.search(
+            r"output\s+tokens?\s*:?\s*"
+            r"(?:(?:are|is)\s+(?:currently\s+)?)?"
+            r"free(?:\s+of\s+charge)?\b",
+            text,
+            re.I,
+        ):
             return Decimal(0)
         return None
 

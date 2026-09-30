@@ -69,7 +69,7 @@ PROVIDERS: dict[str, ProviderConfig] = {
     "typesafe": ProviderConfig(
         name="Typesafe AI",
         provider=TypesafeProvider,
-        url="https://typesafe.ai/",
+        url="https://docs.typesafe.ai/models.md",
     ),
     "bigmodel": ProviderConfig(
         name="BigModel",
