@@ -8,13 +8,13 @@
               {
                 "context_max": null,
                 "context_min": 0,
-                "per_million": 0.1
+                "per_million": 0.05
               }
             ],
             "cache_writes": [
               {
-                "1h_per_million": 2.0,
-                "5m_per_million": 1.25,
+                "1h_per_million": 1.0,
+                "5m_per_million": 0.625,
                 "context_max": null,
                 "context_min": 0
               }
@@ -263,13 +263,13 @@
               {
                 "context_max": null,
                 "context_min": 0,
-                "per_million": 0.5
+                "per_million": 0.25
               }
             ],
             "cache_writes": [
               {
-                "1h_per_million": 10.0,
-                "5m_per_million": 6.25,
+                "1h_per_million": 5.0,
+                "5m_per_million": 3.125,
                 "context_max": null,
                 "context_min": 0
               }
@@ -459,13 +459,13 @@
               {
                 "context_max": null,
                 "context_min": 0,
-                "per_million": 0.5
+                "per_million": 0.25
               }
             ],
             "cache_writes": [
               {
-                "1h_per_million": 10.0,
-                "5m_per_million": 6.25,
+                "1h_per_million": 5.0,
+                "5m_per_million": 3.125,
                 "context_max": null,
                 "context_min": 0
               }
@@ -623,13 +623,13 @@
               {
                 "context_max": null,
                 "context_min": 0,
-                "per_million": 0.2
+                "per_million": 0.1
               }
             ],
             "cache_writes": [
               {
-                "1h_per_million": 4.0,
-                "5m_per_million": 2.5,
+                "1h_per_million": 2.0,
+                "5m_per_million": 1.25,
                 "context_max": null,
                 "context_min": 0
               }
@@ -760,13 +760,13 @@
               {
                 "context_max": null,
                 "context_min": 0,
-                "per_million": 0.2
+                "per_million": 0.1
               }
             ],
             "cache_writes": [
               {
-                "1h_per_million": 4.0,
-                "5m_per_million": 2.5,
+                "1h_per_million": 2.0,
+                "5m_per_million": 1.25,
                 "context_max": null,
                 "context_min": 0
               }

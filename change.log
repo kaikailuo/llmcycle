@@ -1,3 +1,35 @@
 2026-09-30
 
-No pricing changes.
+[PRICE]
+Anthropic / claude-haiku-4-5
+batch.cache.cache_read[0-∞]: 0.1 -> 0.05
+batch.cache.cache_writes[0-∞].1h_per_million: 2 -> 1
+batch.cache.cache_writes[0-∞].5m_per_million: 1.25 -> 0.625
+
+[PRICE]
+Anthropic / claude-opus-4-6
+batch.cache.cache_read[0-∞]: 0.5 -> 0.25
+batch.cache.cache_writes[0-∞].1h_per_million: 10 -> 5
+batch.cache.cache_writes[0-∞].5m_per_million: 6.25 -> 3.125
+
+[PRICE]
+Anthropic / claude-opus-4-7
+batch.cache.cache_read[0-∞]: 0.5 -> 0.25
+batch.cache.cache_writes[0-∞].1h_per_million: 10 -> 5
+batch.cache.cache_writes[0-∞].5m_per_million: 6.25 -> 3.125
+
+[PRICE]
+Anthropic / claude-sonnet-5-5
+batch.cache.cache_read[0-∞]: 0.2 -> 0.1
+batch.cache.cache_writes[0-∞].1h_per_million: 4 -> 2
+batch.cache.cache_writes[0-∞].5m_per_million: 2.5 -> 1.25
+
+[PRICE]
+Anthropic / claude-sonnet-5
+batch.cache.cache_read[0-∞]: 0.2 -> 0.1
+batch.cache.cache_writes[0-∞].1h_per_million: 4 -> 2
+batch.cache.cache_writes[0-∞].5m_per_million: 2.5 -> 1.25
+
+[WARNING]
+Moonshot AI / kimi-k2.6
+official batch price not found; retained existing values

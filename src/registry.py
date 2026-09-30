@@ -4,6 +4,9 @@ from dataclasses import dataclass
 from typing import Type
 
 from src.base.provider import BaseProvider
+from src.providers.anthropic import AnthropicProvider
+from src.providers.google import GoogleProvider
+from src.providers.moonshot import MoonshotProvider
 from src.providers.openai import OpenAIProvider
 
 
@@ -19,7 +22,22 @@ PROVIDERS: dict[str, ProviderConfig] = {
         name="OpenAI",
         provider=OpenAIProvider,
         url="https://developers.openai.com/api/docs/pricing",
-    )
+    ),
+    "anthropic": ProviderConfig(
+        name="Anthropic",
+        provider=AnthropicProvider,
+        url="https://platform.claude.com/docs/en/about-claude/pricing",
+    ),
+    "moonshot": ProviderConfig(
+        name="Moonshot AI",
+        provider=MoonshotProvider,
+        url="https://platform.kimi.ai/zh-hans",
+    ),
+    "google": ProviderConfig(
+        name="Google",
+        provider=GoogleProvider,
+        url="https://ai.google.dev/gemini-api/docs/pricing",
+    ),
 }
 
 
