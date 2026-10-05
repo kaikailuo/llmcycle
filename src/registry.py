@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Type
 
 from src.base.provider import BaseProvider
+from src.providers.alibaba_bailian import AlibabaBailianProvider
 from src.providers.anthropic import AnthropicProvider
 from src.providers.azure_openai import AzureOpenAIProvider
 from src.providers.aws_bedrock import AWSBedrockProvider
@@ -94,6 +95,11 @@ PROVIDERS: dict[str, ProviderConfig] = {
         name="Volcengine",
         provider=VolcengineProvider,
         url="https://ark.cn-beijing.volcengineapi.com/",
+    ),
+    "alibaba_bailian": ProviderConfig(
+        name="Alibaba Bailian",
+        provider=AlibabaBailianProvider,
+        url="https://help.aliyun.com/zh/model-studio/",
     ),
 }
 

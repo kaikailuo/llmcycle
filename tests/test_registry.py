@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import unittest
 
+from src.providers.alibaba_bailian import AlibabaBailianProvider
 from src.providers.azure_openai import AzureOpenAIProvider
 from src.providers.aws_bedrock import AWSBedrockProvider
 from src.providers.bigmodel import BigModelProvider
@@ -44,6 +45,11 @@ class RegistryTests(unittest.TestCase):
                 "Volcengine",
                 VolcengineProvider,
                 "https://ark.cn-beijing.volcengineapi.com/",
+            ),
+            "alibaba_bailian": (
+                "Alibaba Bailian",
+                AlibabaBailianProvider,
+                "https://help.aliyun.com/zh/model-studio/",
             ),
         }
 
