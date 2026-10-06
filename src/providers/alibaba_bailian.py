@@ -12,6 +12,7 @@ from urllib.request import Request, urlopen
 from src.base.provider import BaseProvider
 from src.base.result import ModelResult
 from src.utils.currency import cny_to_usd
+from src.utils.http import urlopen_with_retry
 
 
 MODEL_URLS = {
@@ -209,7 +210,9 @@ class AlibabaBailianProvider(BaseProvider):
                         "User-Agent": "llmcycle-pricing-maintainer/1.0",
                     },
                 )
-                with urlopen(request, timeout=30) as response:
+                with urlopen_with_retry(
+                    request, timeout=30, opener=urlopen
+                ) as response:
                     body = response.read()
                     if (
                         response.headers.get("Content-Encoding", "").lower()

@@ -15,6 +15,7 @@ from urllib.request import Request, urlopen
 from src.base.provider import BaseProvider
 from src.base.result import ModelResult
 from src.utils.currency import cny_to_usd
+from src.utils.http import urlopen_with_retry
 
 
 @dataclass
@@ -98,7 +99,7 @@ class VolcengineProvider(BaseProvider):
         request = self._signed_request(
             source_url, body, access_key, secret_key, datetime.now(timezone.utc)
         )
-        with urlopen(request, timeout=60) as response:
+        with urlopen_with_retry(request, timeout=60, opener=urlopen) as response:
             data = json.load(response)
         if not isinstance(data, dict):
             raise ValueError("GetModelActivation returned invalid JSON")

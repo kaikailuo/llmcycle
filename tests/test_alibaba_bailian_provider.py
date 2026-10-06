@@ -297,7 +297,49 @@ class AlibabaBailianProviderTests(unittest.TestCase):
 
         self.assertEqual(1.0, result.data["input"][0]["per_million"])
 
-    def test_one_fetch_failure_does_not_block_another_model(self) -> None:
+    def test_transient_fetch_failure_recovers_without_warning(self) -> None:
+        class _Headers:
+            def get(self, name: str, default: str = "") -> str:
+                return default
+
+            def get_content_charset(self) -> str:
+                return "utf-8"
+
+        class _Response:
+            headers = _Headers()
+
+            def __init__(self, html: str) -> None:
+                self._body = html.encode()
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args: object) -> None:
+                return None
+
+            def read(self) -> bytes:
+                return self._body
+
+        provider = AlibabaBailianProvider()
+        provider.MODEL_URLS = {
+            "qwen3.6-plus": "https://example.invalid/first",
+        }
+        first = _model(
+            model_api_id="qwen3.6-plus", input=_rates([(0, None)])
+        )
+        successful_page = _page([(None, [("输入", "6.8")])])
+
+        with patch(
+            "src.providers.alibaba_bailian.urlopen",
+            side_effect=[TimeoutError("timed out"), _Response(successful_page)],
+        ) as mocked:
+            first_result = provider.run("unused", [first])[0]
+
+        self.assertEqual(2, mocked.call_count)
+        self.assertEqual(1.0, first_result.data["input"][0]["per_million"])
+        self.assertEqual([], first_result.warnings)
+
+    def test_persistent_fetch_failure_does_not_block_another_model(self) -> None:
         class _Headers:
             def get(self, name: str, default: str = "") -> str:
                 return default
@@ -335,12 +377,18 @@ class AlibabaBailianProviderTests(unittest.TestCase):
 
         with patch(
             "src.providers.alibaba_bailian.urlopen",
-            side_effect=[TimeoutError("timed out"), _Response(successful_page)],
-        ):
+            side_effect=[
+                TimeoutError("timed out 1"),
+                TimeoutError("timed out 2"),
+                TimeoutError("timed out 3"),
+                _Response(successful_page),
+            ],
+        ) as mocked:
             first_result, second_result = provider.run("unused", [first, second])
 
+        self.assertEqual(4, mocked.call_count)
         self.assertEqual(99, first_result.data["input"][0]["per_million"])
-        self.assertTrue(any("timed out" in w for w in first_result.warnings))
+        self.assertTrue(any("timed out 3" in w for w in first_result.warnings))
         self.assertEqual(1.0, second_result.data["input"][0]["per_million"])
         self.assertEqual([], second_result.warnings)
 

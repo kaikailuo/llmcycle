@@ -10,6 +10,7 @@ from urllib.request import Request, urlopen
 
 from src.base.provider import BaseProvider
 from src.base.result import ModelResult
+from src.utils.http import urlopen_with_retry
 
 
 @dataclass(frozen=True)
@@ -50,7 +51,7 @@ class AnthropicProvider(BaseProvider):
                 "User-Agent": "llmcycle-pricing-maintainer/1.0",
             },
         )
-        with urlopen(request, timeout=30) as response:
+        with urlopen_with_retry(request, timeout=30, opener=urlopen) as response:
             encoding = response.headers.get_content_charset() or "utf-8"
             return response.read().decode(encoding)
 

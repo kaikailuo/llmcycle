@@ -9,6 +9,7 @@ from urllib.request import Request, urlopen
 
 from src.base.provider import BaseProvider
 from src.base.result import ModelResult
+from src.utils.http import urlopen_with_retry
 
 
 class AWSBedrockProvider(BaseProvider):
@@ -67,7 +68,7 @@ class AWSBedrockProvider(BaseProvider):
                 "User-Agent": "llmcycle-pricing-maintainer/1.0",
             },
         )
-        with urlopen(request, timeout=60) as response:
+        with urlopen_with_retry(request, timeout=60, opener=urlopen) as response:
             data = json.load(response)
         if not isinstance(data, dict):
             raise ValueError("AWS Price List returned invalid JSON")

@@ -10,6 +10,7 @@ from urllib.request import Request, urlopen
 
 from src.base.provider import BaseProvider
 from src.base.result import ModelResult
+from src.utils.http import urlopen_with_retry
 
 
 class AzureOpenAIProvider(BaseProvider):
@@ -54,7 +55,9 @@ class AzureOpenAIProvider(BaseProvider):
                         "User-Agent": "llmcycle-pricing-maintainer/1.0",
                     },
                 )
-                with urlopen(request, timeout=60) as response:
+                with urlopen_with_retry(
+                    request, timeout=60, opener=urlopen
+                ) as response:
                     page = json.load(response)
                 if not isinstance(page, dict) or not isinstance(
                     page.get("Items"), list

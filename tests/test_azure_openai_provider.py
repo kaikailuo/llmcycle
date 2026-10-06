@@ -133,6 +133,40 @@ class AzureOpenAIProviderTests(unittest.TestCase):
         second_url = mocked.call_args_list[1].args[0].full_url
         self.assertIn("$skip=1000", second_url)
 
+    def test_fetch_retries_only_the_failed_page(self) -> None:
+        page_1 = {
+            "Items": [_meter("gpt 4.1 mini Inp glbl", 0.0004)],
+            "NextPageLink": "https://prices.azure.com/api/retail/prices?$skip=1000",
+        }
+        page_2 = {
+            "Items": [_meter("gpt 4.1 mini Outp glbl", 0.0016)],
+            "NextPageLink": None,
+        }
+        page_3 = {
+            "Items": [_meter("GPT 5 Mini Inpt Glbl", 0.25, "1M")],
+            "NextPageLink": None,
+        }
+        responses = [
+            io.BytesIO(json.dumps(page_1).encode()),
+            TimeoutError("page 2 timed out"),
+            io.BytesIO(json.dumps(page_2).encode()),
+            io.BytesIO(json.dumps(page_3).encode()),
+        ]
+
+        with patch(
+            "src.providers.azure_openai.urlopen", side_effect=responses
+        ) as mocked:
+            items = AzureOpenAIProvider().fetch(
+                "https://prices.azure.com/api/retail/prices"
+            )
+
+        self.assertEqual(3, len(items))
+        self.assertEqual(4, mocked.call_count)
+        requested_urls = [item.args[0].full_url for item in mocked.call_args_list]
+        self.assertNotEqual(requested_urls[0], requested_urls[1])
+        self.assertEqual(requested_urls[1], requested_urls[2])
+        self.assertNotEqual(requested_urls[0], requested_urls[3])
+
 
 if __name__ == "__main__":
     unittest.main()
