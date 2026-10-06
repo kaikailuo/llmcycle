@@ -194,7 +194,13 @@ def _list_segment(item: Any, index: int, length: int) -> str:
     if isinstance(item, dict) and "context_min" in item:
         minimum = item.get("context_min")
         maximum = item.get("context_max")
-        return f"[{minimum}-{maximum if maximum is not None else '∞'}]"
+        thinking = item.get("thinking")
+        suffix = (
+            f", thinking={str(thinking).lower()}"
+            if isinstance(thinking, bool)
+            else ""
+        )
+        return f"[{minimum}-{maximum if maximum is not None else '∞'}{suffix}]"
     return "" if length == 1 else f"[{index}]"
 
 
