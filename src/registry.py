@@ -61,7 +61,7 @@ PROVIDERS: dict[str, ProviderConfig] = {
     "minimax": ProviderConfig(
         name="MiniMax",
         provider=MiniMaxProvider,
-        url="https://platform.minimax.io/subscribe/token-plan?tab=api-enterprise",
+        url="https://platform.minimax.io/docs/guides/pricing-paygo.md",
     ),
     "deepseek": ProviderConfig(
         name="DeepSeek",

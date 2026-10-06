@@ -6,7 +6,6 @@ from dataclasses import dataclass
 from decimal import Decimal, InvalidOperation
 from html import unescape
 from typing import Any
-from urllib.parse import urljoin, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
 from src.base.provider import BaseProvider
@@ -28,29 +27,10 @@ class MiniMaxProvider(BaseProvider):
     MODEL_ALIASES: dict[str, tuple[str, ...]] = {}
 
     def fetch(self, source_url: str) -> str:
-        landing_page = self._fetch_text(source_url, "text/html, text/plain;q=0.9")
-        if self._contains_llm_pricing(landing_page):
-            return landing_page
-
-        # The pricing landing page links to this same-origin full pay-as-you-go
-        # document for current and legacy model prices. Prefer a link exposed in
-        # the page, with the documented path as a same-origin fallback when the
-        # landing page is client-rendered.
-        link_match = re.search(
-            r'href=["\']([^"\']*pricing-paygo(?:\.md)?)["\']',
-            landing_page,
-            re.I,
+        return self._fetch_text(
+            source_url,
+            "text/markdown, text/plain;q=0.9",
         )
-        if link_match:
-            pricing_url = urljoin(source_url, link_match.group(1))
-        else:
-            parts = urlsplit(source_url)
-            pricing_url = urlunsplit(
-                (parts.scheme, parts.netloc, "/docs/guides/pricing-paygo.md", "", "")
-            )
-        if not pricing_url.endswith(".md"):
-            pricing_url = f"{pricing_url}.md"
-        return self._fetch_text(pricing_url, "text/markdown, text/plain;q=0.9")
 
     @staticmethod
     def _fetch_text(url: str, accept: str) -> str:
@@ -64,14 +44,6 @@ class MiniMaxProvider(BaseProvider):
         with urlopen(request, timeout=30) as response:
             encoding = response.headers.get_content_charset() or "utf-8"
             return response.read().decode(encoding)
-
-    @staticmethod
-    def _contains_llm_pricing(raw_data: str) -> bool:
-        return (
-            "MiniMax-M2.7" in raw_data
-            and "MiniMax-M2.5" in raw_data
-            and ("Prompt caching" in raw_data or "Cache read" in raw_data)
-        )
 
     def parse(
         self, raw_data: str, models: list[dict[str, Any]]
