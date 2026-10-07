@@ -1,6 +1,11 @@
 __pycache__/
 *.py[cod]
+.venv/
 
 
 result/
 change.log
+
+.env
+.env.*
+!.env.example

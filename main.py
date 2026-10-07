@@ -3,8 +3,13 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 from src.registry import PROVIDERS
 from src.runner import run
+
+
+PROJECT_ROOT = Path(__file__).resolve().parent
 
 
 def main() -> int:
@@ -17,9 +22,9 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    project_root = Path(__file__).resolve().parent
+    load_dotenv(PROJECT_ROOT / ".env")
     try:
-        summary = run(project_root, args.providers)
+        summary = run(PROJECT_ROOT, args.providers)
     except (OSError, ValueError) as exc:
         parser.exit(1, f"error: {exc}\n")
 
