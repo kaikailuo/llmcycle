@@ -724,22 +724,99 @@
       "type": "chat"
     },
     {
+      "batch": {
+        "cache": [
+          {
+            "cache_read": [
+              { "context_max": 32768, "context_min": 0, "per_million": 0.095 },
+              {
+                "context_max": 131072,
+                "context_min": 32768,
+                "per_million": 0.095
+              },
+              {
+                "context_max": null,
+                "context_min": 131072,
+                "per_million": 0.095
+              }
+            ]
+          }
+        ],
+        "input": [
+          { "context_max": 32768, "context_min": 0, "per_million": 0.47 },
+          {
+            "context_max": 131072,
+            "context_min": 32768,
+            "per_million": 0.47
+          },
+          {
+            "context_max": null,
+            "context_min": 131072,
+            "per_million": 0.47
+          }
+        ],
+        "output": [
+          { "context_max": 32768, "context_min": 0, "per_million": 2.37 },
+          {
+            "context_max": 131072,
+            "context_min": 32768,
+            "per_million": 2.37
+          },
+          {
+            "context_max": null,
+            "context_min": 131072,
+            "per_million": 2.37
+          }
+        ]
+      },
       "cache": [
         {
           "cache_read": [
-            { "context_max": null, "context_min": 0, "per_million": 0.095 }
+            { "context_max": 32768, "context_min": 0, "per_million": 0.095 },
+            {
+              "context_max": 131072,
+              "context_min": 32768,
+              "per_million": 0.095
+            },
+            {
+              "context_max": null,
+              "context_min": 131072,
+              "per_million": 0.095
+            }
           ]
         }
       ],
       "currency": "USD",
-      "input": [{ "context_max": null, "context_min": 0, "per_million": 0.47 }],
+      "input": [
+        { "context_max": 32768, "context_min": 0, "per_million": 0.47 },
+        {
+          "context_max": 131072,
+          "context_min": 32768,
+          "per_million": 0.47
+        },
+        {
+          "context_max": null,
+          "context_min": 131072,
+          "per_million": 0.47
+        }
+      ],
       "last_updated": 1787023633,
       "model_api_id": "doubao-seed-2-0-pro-260215",
       "model_region": "Global",
       "model_uid": "5c8ab142c375454ca2c8458fda54d6b2",
       "name": "Doubao-Seed-2.0-pro",
       "output": [
-        { "context_max": null, "context_min": 0, "per_million": 2.37 }
+        { "context_max": 32768, "context_min": 0, "per_million": 2.37 },
+        {
+          "context_max": 131072,
+          "context_min": 32768,
+          "per_million": 2.37
+        },
+        {
+          "context_max": null,
+          "context_min": 131072,
+          "per_million": 2.37
+        }
       ],
       "provider": "Volcengine",
       "type": "chat"
