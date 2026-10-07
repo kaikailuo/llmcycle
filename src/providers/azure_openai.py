@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import json
 import re
+from dataclasses import dataclass
 from decimal import Decimal, InvalidOperation
 from typing import Any
 from urllib.parse import urlencode
@@ -13,22 +14,80 @@ from src.base.result import ModelResult
 from src.utils.http import urlopen_with_retry
 
 
+_UNSCOPED_CONTEXT = "unscoped"
+_SHORT_CONTEXT = "short"
+_LONG_CONTEXT = "long"
+_CONTEXT_BOUNDARY = 272000
+
+
+@dataclass(frozen=True)
+class _SkuDimensions:
+    context: str
+    billing: str
+    deployment: str
+    region: str
+    is_batch: bool
+
+    @property
+    def target(self) -> str:
+        prefix = "batch." if self.is_batch else ""
+        return f"{prefix}{self.billing}"
+
+
+PriceMap = dict[tuple[str, str], set[Decimal]]
+
+
 class AzureOpenAIProvider(BaseProvider):
     name = "Azure OpenAI"
 
-    _PRODUCT_NAMES = ("Azure OpenAI", "Azure OpenAI GPT5")
+    _PRODUCT_NAMES = ("Azure OpenAI", "Azure OpenAI GPT5", "Azure OpenAI GPT6")
     _MODEL_TOKEN_RE = re.compile(r"[a-z]+|\d+(?:\.\d+)?", re.I)
     _INPUT_MARKERS = {"inp", "inpt", "input"}
     _OUTPUT_MARKERS = {"opt", "out", "outp", "outpt", "output"}
-    _CACHE_MARKERS = {"cached", "cchd", "cd"}
-    _GLOBAL_MARKERS = {"global", "glbl", "gl"}
-    _ALLOWED_DESCRIPTORS = (
-        _INPUT_MARKERS
-        | _OUTPUT_MARKERS
-        | _CACHE_MARKERS
-        | _GLOBAL_MARKERS
-        | {"batch", "chat", "token", "tokens", "tkn"}
-    )
+    _CACHE_MARKERS = {"cache", "cached", "cchd", "cd"}
+    _CACHE_WRITE_MARKERS = {"wr", "write", "writes"}
+    _CONTEXT_MARKERS = {
+        "shortco": _SHORT_CONTEXT,
+        "longco": _LONG_CONTEXT,
+    }
+    _DEPLOYMENT_MARKERS = {
+        "std": "standard",
+        "pp": "priority",
+        "flex": "flex",
+        "fl": "flex",
+    }
+    _REGION_MARKERS = {
+        "global": "global",
+        "glbl": "global",
+        "gl": "global",
+        "dz": "data_zone",
+        "dzone": "data_zone",
+        "datazone": "data_zone",
+        "regional": "regional",
+        "regnl": "regional",
+    }
+    _WORKLOAD_MARKERS = {"batch", "chat"}
+    _UNIT_MARKERS = {"token", "tokens", "tkn"}
+
+    # Azure SKU identities are deliberately explicit. In particular, the generic
+    # gpt-4o API id is the 2024-11-20 (1120) Azure snapshot, not every SKU whose
+    # name starts with "gpt 4o".
+    MODEL_SKU_ALIASES: dict[str, tuple[tuple[str, ...], ...]] = {
+        "gpt-4.1-mini": (("gpt", "4.1", "mini"),),
+        "gpt-4o": (("gpt", "4", "o", "1120"),),
+        "gpt-4o-mini": (("gpt", "4", "o", "mini", "0718"),),
+        "gpt-5-mini": (("gpt", "5", "mini"),),
+        "gpt-5.1": (("gpt", "5.1"),),
+        "gpt-5.2": (("gpt", "5.2"),),
+        "gpt-5.4": (("5.4",),),
+        "gpt-5.4-mini": (("5.4", "mini"),),
+        "gpt-5.5": (("5.5",),),
+        "gpt-5.6-luna": (("5.6", "luna"),),
+        "gpt-5.6-sol": (("5.6", "sol"),),
+        "gpt-5.6-terra": (("5.6", "terra"),),
+        "gpt-6-luna": (("6", "luna"),),
+        "gpt-6-sol": (("6", "sol"),),
+    }
 
     def fetch(self, source_url: str) -> list[dict[str, Any]]:
         items: list[dict[str, Any]] = []
@@ -138,23 +197,26 @@ class AzureOpenAIProvider(BaseProvider):
     @classmethod
     def _collect_prices(
         cls, model_id: str, items: list[dict[str, Any]]
-    ) -> tuple[dict[str, set[Decimal]], int]:
-        prices: dict[str, set[Decimal]] = {}
+    ) -> tuple[PriceMap, int]:
+        prices: PriceMap = {}
         matched_meter_count = 0
-        model_tokens = cls._tokens(model_id)
         for item in items:
-            parsed = cls._parse_meter(item, model_tokens)
+            parsed = cls._parse_meter(item, model_id)
             if parsed is None:
                 continue
-            target, price = parsed
-            prices.setdefault(target, set()).add(price)
+            dimensions, price = parsed
+            key = (dimensions.target, dimensions.context)
+            # Repeated regions and effective dates collapse only when the price
+            # is identical. Different values remain an explicit conflict for
+            # _one_price instead of silently selecting a date or region.
+            prices.setdefault(key, set()).add(price)
             matched_meter_count += 1
         return prices, matched_meter_count
 
     @classmethod
     def _parse_meter(
-        cls, item: dict[str, Any], model_tokens: list[str]
-    ) -> tuple[str, Decimal] | None:
+        cls, item: dict[str, Any], model_id: str
+    ) -> tuple[_SkuDimensions, Decimal] | None:
         product_name = item.get("productName")
         if product_name is not None and product_name not in cls._PRODUCT_NAMES:
             return None
@@ -169,43 +231,117 @@ class AzureOpenAIProvider(BaseProvider):
         if not isinstance(sku_name, str):
             return None
         sku_tokens = cls._tokens(sku_name)
-        if sku_tokens[: len(model_tokens)] != model_tokens:
+        aliases = cls.MODEL_SKU_ALIASES.get(model_id, ())
+        matched_alias = next(
+            (
+                alias
+                for alias in sorted(aliases, key=len, reverse=True)
+                if tuple(sku_tokens[: len(alias)]) == alias
+            ),
+            None,
+        )
+        if matched_alias is None:
             return None
-        descriptors = sku_tokens[len(model_tokens) :]
-        if not descriptors or not any(
-            token in cls._GLOBAL_MARKERS for token in descriptors
-        ):
+        descriptors = sku_tokens[len(matched_alias) :]
+        dimensions = cls._parse_dimensions(descriptors)
+        if dimensions is None:
             return None
-        if any(
-            token not in cls._ALLOWED_DESCRIPTORS and not token.isdigit()
-            for token in descriptors
-        ):
+        if dimensions.deployment != "standard" or dimensions.region != "global":
             return None
-
-        has_input = any(token in cls._INPUT_MARKERS for token in descriptors)
-        has_output = any(token in cls._OUTPUT_MARKERS for token in descriptors)
-        if has_input == has_output:
-            return None
-        is_batch = "batch" in descriptors
-        is_cached = any(token in cls._CACHE_MARKERS for token in descriptors)
-        if is_cached and not has_input:
-            return None
-
-        if is_batch and is_cached:
-            target = "batch.cache_read"
-        elif is_batch:
-            target = "batch.input" if has_input else "batch.output"
-        elif is_cached:
-            target = "cache_read"
-        else:
-            target = "input" if has_input else "output"
 
         price = cls._price_per_million(
             item.get("retailPrice"), item.get("unitOfMeasure")
         )
         if price is None:
             return None
-        return target, price
+        return dimensions, price
+
+    @classmethod
+    def _parse_dimensions(cls, descriptors: list[str]) -> _SkuDimensions | None:
+        tokens = cls._normalize_descriptor_tokens(descriptors)
+        if not tokens:
+            return None
+
+        known_tokens = (
+            cls._INPUT_MARKERS
+            | cls._OUTPUT_MARKERS
+            | cls._CACHE_MARKERS
+            | cls._CACHE_WRITE_MARKERS
+            | set(cls._CONTEXT_MARKERS)
+            | set(cls._DEPLOYMENT_MARKERS)
+            | set(cls._REGION_MARKERS)
+            | cls._WORKLOAD_MARKERS
+            | cls._UNIT_MARKERS
+        )
+        if any(token not in known_tokens for token in tokens):
+            return None
+
+        context_values = {
+            cls._CONTEXT_MARKERS[token]
+            for token in tokens
+            if token in cls._CONTEXT_MARKERS
+        }
+        deployment_values = {
+            cls._DEPLOYMENT_MARKERS[token]
+            for token in tokens
+            if token in cls._DEPLOYMENT_MARKERS
+        }
+        region_values = {
+            cls._REGION_MARKERS[token]
+            for token in tokens
+            if token in cls._REGION_MARKERS
+        }
+        if (
+            len(context_values) > 1
+            or len(deployment_values) > 1
+            or len(region_values) != 1
+        ):
+            return None
+
+        has_input = any(token in cls._INPUT_MARKERS for token in tokens)
+        has_output = any(token in cls._OUTPUT_MARKERS for token in tokens)
+        has_cache = any(token in cls._CACHE_MARKERS for token in tokens)
+        has_cache_write = any(token in cls._CACHE_WRITE_MARKERS for token in tokens)
+
+        if has_cache_write:
+            if not has_cache or has_input or has_output:
+                return None
+            billing = "cache_write"
+        elif has_cache:
+            if not has_input or has_output:
+                return None
+            billing = "cache_read"
+        elif has_input != has_output:
+            billing = "input" if has_input else "output"
+        else:
+            return None
+
+        return _SkuDimensions(
+            context=next(iter(context_values), _UNSCOPED_CONTEXT),
+            billing=billing,
+            # Older Azure meters omit the deployment marker for ordinary
+            # Standard pricing. Named alternatives (PP/Flex) are still parsed
+            # explicitly and filtered by _parse_meter.
+            deployment=next(iter(deployment_values), "standard"),
+            region=next(iter(region_values)),
+            is_batch="batch" in tokens,
+        )
+
+    @staticmethod
+    def _normalize_descriptor_tokens(tokens: list[str]) -> list[str]:
+        normalized: list[str] = []
+        index = 0
+        while index < len(tokens):
+            if tokens[index : index + 2] == ["data", "zone"]:
+                normalized.append("datazone")
+                index += 2
+            elif tokens[index] == "batchoutp":
+                normalized.extend(("batch", "outp"))
+                index += 1
+            else:
+                normalized.append(tokens[index])
+                index += 1
+        return normalized
 
     @classmethod
     def _tokens(cls, value: str) -> list[str]:
@@ -236,45 +372,47 @@ class AzureOpenAIProvider(BaseProvider):
     def _update_candidate(
         cls,
         candidate: dict[str, Any],
-        prices: dict[str, set[Decimal]],
+        prices: PriceMap,
         warnings: list[str],
     ) -> bool:
         updated = False
         updated |= cls._update_rates(
-            candidate.get("input"), prices.get("input", set()), "input", warnings
+            candidate.get("input"), prices, "input", warnings
         )
         updated |= cls._update_rates(
             candidate.get("output"),
-            prices.get("output", set()),
+            prices,
             "output",
             warnings,
         )
         if "cache" in candidate:
             updated |= cls._update_cache(
-                candidate["cache"], prices.get("cache_read", set()), "cache", warnings
+                candidate["cache"], prices, "cache", warnings
             )
 
         if "batch" in candidate:
             batch = candidate["batch"]
             if not isinstance(batch, dict):
-                warnings.append("batch has an unexpected structure; retained existing value")
+                warnings.append(
+                    "batch has an unexpected structure; retained existing value"
+                )
             else:
                 updated |= cls._update_rates(
                     batch.get("input"),
-                    prices.get("batch.input", set()),
+                    prices,
                     "batch.input",
                     warnings,
                 )
                 updated |= cls._update_rates(
                     batch.get("output"),
-                    prices.get("batch.output", set()),
+                    prices,
                     "batch.output",
                     warnings,
                 )
                 if "cache" in batch:
                     updated |= cls._update_cache(
                         batch["cache"],
-                        prices.get("batch.cache_read", set()),
+                        prices,
                         "batch.cache",
                         warnings,
                     )
@@ -300,46 +438,79 @@ class AzureOpenAIProvider(BaseProvider):
     def _update_rates(
         cls,
         rates: Any,
-        prices: set[Decimal],
+        prices: PriceMap,
         path: str,
         warnings: list[str],
+        target: str | None = None,
     ) -> bool:
         if rates is None:
             return False
-        price = cls._one_price(prices, path, warnings)
-        if price is None:
-            return False
         if not isinstance(rates, list):
-            warnings.append(f"{path} has an unexpected structure; retained existing value")
+            warnings.append(
+                f"{path} has an unexpected structure; retained existing value"
+            )
             return False
         updated = False
-        for rate in rates:
+        for index, rate in enumerate(rates):
+            rate_path = path if len(rates) == 1 else f"{path}[{index}]"
             if not isinstance(rate, dict) or "per_million" not in rate:
                 warnings.append(
-                    f"{path} has an unexpected structure; retained existing value"
+                    f"{rate_path} has an unexpected structure; retained existing value"
                 )
+                continue
+            context = cls._rate_context(rate)
+            if context is None:
+                warnings.append(
+                    f"{rate_path} has an unsupported context tier; "
+                    "retained existing value"
+                )
+                continue
+            price_target = target or path
+            candidates = prices.get((price_target, context))
+            if candidates is None and context == _SHORT_CONTEXT:
+                # Some GPT-5 meters omit ShortCo; their unqualified meter is
+                # the 0-272K price while LongCo remains explicit.
+                candidates = prices.get((price_target, _UNSCOPED_CONTEXT))
+            price = cls._one_price(candidates or set(), rate_path, warnings)
+            if price is None:
                 continue
             rate["per_million"] = float(price)
             updated = True
         return updated
 
+    @staticmethod
+    def _rate_context(rate: dict[str, Any]) -> str | None:
+        context_min = rate.get("context_min")
+        context_max = rate.get("context_max")
+        if context_min == 0 and context_max is None:
+            return _UNSCOPED_CONTEXT
+        if context_min == 0 and context_max == _CONTEXT_BOUNDARY:
+            return _SHORT_CONTEXT
+        if context_min == _CONTEXT_BOUNDARY and context_max is None:
+            return _LONG_CONTEXT
+        return None
+
     @classmethod
     def _update_cache(
         cls,
         groups: Any,
-        prices: set[Decimal],
+        prices: PriceMap,
         path: str,
         warnings: list[str],
     ) -> bool:
         if not isinstance(groups, list):
-            warnings.append(f"{path} has an unexpected structure; retained existing value")
+            warnings.append(
+                f"{path} has an unexpected structure; retained existing value"
+            )
             return False
         updated = False
+        target_prefix = "batch." if path.startswith("batch.") else ""
         for index, group in enumerate(groups):
             suffix = "" if len(groups) == 1 else f"[{index}]"
             if not isinstance(group, dict):
                 warnings.append(
-                    f"{path}{suffix} has an unexpected structure; retained existing value"
+                    f"{path}{suffix} has an unexpected structure; "
+                    "retained existing value"
                 )
                 continue
             updated |= cls._update_rates(
@@ -347,10 +518,14 @@ class AzureOpenAIProvider(BaseProvider):
                 prices,
                 f"{path}{suffix}.cache_read",
                 warnings,
+                target=f"{target_prefix}cache_read",
             )
             if "cache_writes" in group:
-                warnings.append(
-                    f"official price not found for {path}{suffix}.cache_writes; "
-                    "retained existing values"
+                updated |= cls._update_rates(
+                    group.get("cache_writes"),
+                    prices,
+                    f"{path}{suffix}.cache_writes",
+                    warnings,
+                    target=f"{target_prefix}cache_write",
                 )
         return updated
